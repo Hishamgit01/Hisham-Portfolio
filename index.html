@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Hisham P - Portfolio</title>
+    <meta name="description" content="Portfolio of Muhammed Hisham P - Passionate Tech Enthusiast, Self-taught Developer & Graphical Designer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Animated Full Background -->
+    <div class="animated-bg dark-bg"></div>
+    <div class="animated-bg light-bg"></div>
+    
+    <nav class="navbar intro-elem intro-fade-down">
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#social">Connect</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-moon icon-moon"></i>
+                    <i class="fa-solid fa-sun icon-sun"></i>
+                </div>
+                <span class="theme-text"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <p class="greeting intro-elem intro-fade-up" style="--delay: 1">Hi, I am</p>
+                    <h1 class="name gradient-text intro-elem intro-fade-up" style="--delay: 2">Muhammed Hisham P</h1>
+                    <h2 class="role intro-elem intro-fade-up" style="--delay: 3">Tech Enthusiast & Creator</h2>
+                    <p class="tagline intro-elem intro-fade-up" style="--delay: 4">Blending code and creativity to build extraordinary digital experiences.</p>
+                    <div class="cta-group intro-elem intro-fade-up" style="--delay: 5">
+                        <a href="#projects" class="btn btn-primary">View My Projects</a>
+                        <a href="#social" class="btn btn-outline">Let's Connect</a>
+                    </div>
+                </div>
+                <div class="hero-image intro-elem intro-fade-up" style="--delay: 6">
+                    <div class="profile-img-container">
+                        <img src="Public/Images/mypic.JPG" alt="Muhammed Hisham P" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Muhammed+Hisham&background=random&color=fff&size=500'">
+                        <div class="img-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS & EXPERTISE -->
+        <section id="skills" class="section-container">
+            <h2 class="section-title scroll-elem fade-up">Skills & <span class="gradient-text">Expertise</span></h2>
+            <div class="grid-container stagger-children">
+                <div class="card glassmorphism scroll-elem scale-up">
+                    <div class="card-icon"><i class="fa-brands fa-html5"></i></div>
+                    <h3>Frontend Dev</h3>
+                    <p>Crafting responsive and interactive user interfaces using modern web technologies like HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="card glassmorphism scroll-elem scale-up">
+                    <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>Graphic Design</h3>
+                    <p>Designing compelling visual identities, branding materials, and stunning graphics with a keen eye for aesthetics.</p>
+                </div>
+                <div class="card glassmorphism scroll-elem scale-up">
+                    <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Software Engineering</h3>
+                    <p>Building robust solutions and learning new paradigms as a dedicated self-taught developer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section-container">
+            <h2 class="section-title scroll-elem fade-up">Featured <span class="gradient-text">Projects</span></h2>
+            <div class="projects-grid stagger-children">
+                <!-- Project 1 -->
+                <div class="project-card glassmorphism scroll-elem slide-up-heavy">
+                    <div class="project-image">
+                        <!-- Placeholder Image -->
+                        <div class="img-placeholder" style="background: linear-gradient(135deg, var(--accent-1), var(--accent-2));">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-featured digital storefront with modern UI, smooth animations, and a focus on conversion rate optimization.</p>
+                        <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card glassmorphism scroll-elem slide-up-heavy">
+                    <div class="project-image">
+                        <div class="img-placeholder" style="background: linear-gradient(135deg, var(--accent-2), var(--accent-3));">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Brand Identity Design</h3>
+                        <p>A comprehensive branding package including logo design, typography selection, and marketing materials.</p>
+                        <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="section-container">
+            <h2 class="section-title scroll-elem fade-up">My <span class="gradient-text">Services</span></h2>
+            <div class="grid-container stagger-children">
+                <div class="service-card glassmorphism scroll-elem fade-in">
+                    <h3>Web Development</h3>
+                    <p>I build custom, fast, and accessible websites tailored to your specific needs and goals.</p>
+                </div>
+                <div class="service-card glassmorphism scroll-elem fade-in">
+                    <h3>UI/UX Design</h3>
+                    <p>Designing intuitive user interfaces that provide exceptional user experiences across all devices.</p>
+                </div>
+                <div class="service-card glassmorphism scroll-elem fade-in">
+                    <h3>Brand Strategy</h3>
+                    <p>Helping you define your brand's voice, visual identity, and positioning in the market.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOCIAL CONNECT -->
+        <section id="social" class="social section-container">
+            <h2 class="section-title scroll-elem fade-up">Let's <span class="gradient-text">Connect</span></h2>
+            <p class="social-subtitle scroll-elem fade-up">Find me across the web. I'm always open to new opportunities and collaborations.</p>
+            <div class="social-links stagger-children">
+                <a href="https://www.linkedin.com/in/muhammed-hisham-p-76457a300" target="_blank" class="social-btn linkedin glassmorphism scroll-elem scale-up">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/Hishamgit01" target="_blank" class="social-btn github glassmorphism scroll-elem scale-up">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.instagram.com/hisham_tube/" target="_blank" class="social-btn instagram glassmorphism scroll-elem scale-up">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="scroll-elem fade-in">
+        <p>&copy; 2026 Muhammed Hisham P. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
