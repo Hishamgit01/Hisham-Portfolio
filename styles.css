@@ -131,6 +131,15 @@ a, button, .btn {
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     transition: background-color 0.5s ease, border-color 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+/* 3D Inner Elements */
+.card-icon, .card h3, .card p, 
+.service-card h3, .service-card p, 
+.project-info, .social-btn i, .social-btn span {
+    transform: translateZ(40px);
+    transition: transform 0.3s ease;
 }
 
 .gradient-text {
@@ -164,47 +173,13 @@ a, button, .btn {
 /* Intro Animations (Page Load) */
 .intro-elem {
     opacity: 0;
-    will-change: transform, opacity;
-}
-
-.intro-elem.loaded {
-    animation-duration: 1.2s;
-    animation-fill-mode: forwards;
-    animation-timing-function: var(--organic-ease);
-    /* Calculate delay based on --delay CSS variable */
-    animation-delay: calc(var(--delay, 0) * 0.15s);
-}
-
-.intro-fade-up.loaded { animation-name: introFadeUp; }
-.intro-fade-down.loaded { animation-name: introFadeDown; }
-
-@keyframes introFadeUp {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes introFadeDown {
-    0% { opacity: 0; transform: translateY(-40px); }
-    100% { opacity: 1; transform: translateY(0); }
+    visibility: hidden; /* GSAP will handle */
 }
 
 /* Scroll Triggered Animations */
 .scroll-elem {
     opacity: 0;
-    will-change: transform, opacity;
-    transition: all 1.2s var(--organic-ease);
-}
-
-/* Base starting states */
-.scroll-elem.fade-up { transform: translateY(50px); }
-.scroll-elem.slide-up-heavy { transform: translateY(100px); }
-.scroll-elem.scale-up { transform: translateY(30px) scale(0.9); }
-.scroll-elem.fade-in { transform: translateY(0); }
-
-/* The 'show' class is applied by JS when element enters viewport */
-.scroll-elem.show {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+    visibility: hidden; /* GSAP will handle */
 }
 
 /* --- NAVBAR --- */
@@ -467,15 +442,15 @@ a, button, .btn {
 /* --- CARDS (SKILLS & SERVICES) --- */
 .card, .service-card {
     padding: 2.5rem;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.5s ease;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.5s ease;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    will-change: transform;
 }
 
 .card:hover, .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
     border-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -505,18 +480,18 @@ a, button, .btn {
 
 .project-card {
     border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: box-shadow 0.4s ease;
+    will-change: transform;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 .project-image {
     width: 100%;
     height: 250px;
+    border-radius: 16px 16px 0 0;
     overflow: hidden;
 }
 
@@ -585,9 +560,9 @@ a, button, .btn {
     text-decoration: none;
     color: var(--text-main);
     font-weight: 600;
-    transition: all 0.3s ease;
-    overflow: hidden;
+    transition: box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     position: relative;
+    will-change: transform;
 }
 
 .social-btn i {
@@ -610,6 +585,7 @@ a, button, .btn {
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 0;
+    border-radius: inherit;
 }
 
 .social-btn:hover::before {
@@ -617,10 +593,9 @@ a, button, .btn {
 }
 
 .social-btn:hover {
-    transform: translateY(-5px);
     color: white;
     border-color: transparent;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
 /* Footer */
