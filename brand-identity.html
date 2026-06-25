@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Identity: Nutri Hub - Portfolio</title>
+    <meta name="description" content="Brand Identity Design for Nutri Hub">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .portfolio-header {
+            padding: 120px 5% 40px;
+            text-align: center;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease, gap 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--accent-1);
+            gap: 12px;
+        }
+        .pdf-presentation {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-top: 1px solid var(--glass-border);
+        }
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .poster-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .poster-img:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        .pdf-info {
+            padding: 2.5rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .pdf-actions {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Animated Full Background -->
+    <div class="animated-bg dark-bg"></div>
+    <div class="animated-bg light-bg"></div>
+    
+    <nav class="navbar intro-elem intro-fade-down">
+        <div class="nav-right">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-moon icon-moon"></i>
+                    <i class="fa-solid fa-sun icon-sun"></i>
+                </div>
+                <span class="theme-text"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="portfolio-header">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+            <h1 class="section-title" style="margin-bottom: 1rem;">Brand Identity: <span class="gradient-text">Nutri Hub</span></h1>
+            <p class="tagline" style="margin: 0 auto; text-align: center;">A comprehensive look into the branding elements crafted for Nutri Hub.</p>
+        </section>
+
+        <!-- Nutri Hub Menu Card -->
+        <section class="section-container" style="padding-top: 0;">
+            <div class="pdf-presentation glassmorphism">
+                <div class="pdf-info">
+                    <h2>Nutri Hub Menu Card</h2>
+                    <p>Showcasing the carefully designed menu layout that prioritizes readability, nutritional values, and appealing aesthetics to match the healthy vibe of the brand.</p>
+                </div>
+                <!-- Visual Gallery -->
+                <img src="Public/Images/Menu 1.png" alt="Nutri Hub Food Menu 1" class="project-img">
+                <img src="Public/Images/Menu 2.png" alt="Nutri Hub Food Menu 2" class="project-img">
+            </div>
+
+            <!-- Nutri Hub Business Card -->
+            <div class="pdf-presentation glassmorphism">
+                <div class="pdf-info">
+                    <h2>Nutri Hub Business Card</h2>
+                    <p>The business card design embodies the modern and clean identity of Nutri Hub, serving as a memorable touchpoint for clients and partners.</p>
+                </div>
+                <!-- Visual Gallery -->
+                <img src="Public/Images/Nutri Hub Business Card.png" alt="Nutri Hub Business Card" class="project-img">
+            </div>
+
+            <!-- Nutri Hub Promotional Posters -->
+            <div class="pdf-presentation glassmorphism">
+                <div class="pdf-info">
+                    <h2>Nutri Hub Promotional Posters</h2>
+                    <p>Eye-catching promotional materials crafted to highlight the brand's key offerings and values, engaging customers through vibrant imagery and typography.</p>
+                </div>
+                <!-- Visual Gallery (Grid) -->
+                <div class="poster-grid">
+                    <img src="Public/Images/P01.png" alt="Nutri Hub Promotional Poster 1" class="poster-img">
+                    <img src="Public/Images/P02.png" alt="Nutri Hub Promotional Poster 2" class="poster-img">
+                    <img src="Public/Images/P03.png" alt="Nutri Hub Promotional Poster 3" class="poster-img">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Muhammed Hisham P. All rights reserved.</p>
+    </footer>
+
+    <!-- GSAP for 3D Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
