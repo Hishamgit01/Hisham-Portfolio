@@ -53,6 +53,34 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('portfolio-theme', targetTheme);
     });
 
+    // --- MOBILE NAVIGATION ---
+    const hamburger = document.getElementById('hamburger-menu');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (hamburger && mobileDrawer) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileDrawer.classList.toggle('active');
+            
+            // Prevent body scroll when drawer is open
+            if (mobileDrawer.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close drawer when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileDrawer.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
     // --- 1. VANILLA TILT 3D EFFECTS ---
     // Initialize 3D tilt on cards and buttons. Gyroscope enables tilt on mobile.
     if (typeof VanillaTilt !== 'undefined') {
