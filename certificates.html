@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates - Muhammed Hisham P</title>
+    <meta name="description"
+        content="Professional certificates and achievements of Muhammed Hisham P — showcasing qualifications in technology and development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=1.2">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Animated Full Background -->
+    <div class="animated-bg dark-bg"></div>
+    <div class="animated-bg light-bg"></div>
+
+    <nav class="navbar intro-elem intro-fade-down" style="justify-content: space-between;">
+        <div class="nav-left">
+            <a href="index.html" class="back-home-btn" aria-label="Back to Home">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+        <div class="nav-right">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-moon icon-moon"></i>
+                    <i class="fa-solid fa-sun icon-sun"></i>
+                </div>
+                <span class="theme-text"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="certificates-main">
+        <section class="section-container" style="padding-top: 150px;">
+            <h1 class="page-title scroll-elem fade-up">My <span class="gradient-text">Certificates</span></h1>
+            <p class="page-subtitle scroll-elem fade-up">A curated collection of my professional achievements and
+                qualifications.</p>
+
+            <div class="certificates-grid stagger-children">
+                <!-- Certificate 1 -->
+                <div class="certificate-item scroll-elem scale-up">
+                    <div class="certificate-frame" onclick="openLightbox('Public/Images/ECO RIDE certificate.png')">
+                        <img src="Public/Images/ECO RIDE certificate.png" alt="App Development Certification"
+                            class="certificate-img" loading="lazy">
+                    </div>
+                    <div class="certificate-details">
+                        <h3 class="certificate-title">App Development Certification</h3>
+                        <p class="certificate-authority">Issuing Authority</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-item scroll-elem scale-up">
+                    <div class="certificate-frame" onclick="openLightbox('Public/Images/Ride sharing certi.pdf.PNG')">
+                        <img src="Public/Images/Ride sharing certi.pdf.PNG" alt="Internship Certification"
+                            class="certificate-img" loading="lazy">
+                    </div>
+                    <div class="certificate-details">
+                        <h3 class="certificate-title">Internship Certification</h3>
+                        <p class="certificate-authority">Issuing Authority</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-item scroll-elem scale-up">
+                    <div class="certificate-frame" onclick="openLightbox('Public/Images/CEH.png')">
+                        <img src="Public/Images/CEH.png" alt="CEH Certification" class="certificate-img" loading="lazy">
+                    </div>
+                    <div class="certificate-details">
+                        <h3 class="certificate-title">CEH Certification</h3>
+                        <p class="certificate-authority">Issuing Authority</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-item scroll-elem scale-up">
+                    <div class="certificate-frame" onclick="openLightbox('Public/Images/IMG_7305.jpeg')">
+                        <img src="Public/Images/IMG_7305.jpeg" alt="UI/UX Web Design Certification"
+                            class="certificate-img" loading="lazy">
+                    </div>
+                    <div class="certificate-details">
+                        <h3 class="certificate-title">UI/UX Web Design Certification</h3>
+                        <p class="certificate-authority">Issuing Authority</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="certificate-item scroll-elem scale-up">
+                    <div class="certificate-frame" onclick="openLightbox('Public/Images/IMG_7307.jpeg')">
+                        <img src="Public/Images/IMG_7307.jpeg" alt="EDROOTS Certification" class="certificate-img"
+                            loading="lazy">
+                    </div>
+                    <div class="certificate-details">
+                        <h3 class="certificate-title">EDROOTS Certification</h3>
+                        <p class="certificate-authority">Issuing Authority</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 6 -->
+                <div class="certificate-item scroll-elem scale-up">
+                    <div class="certificate-frame" onclick="openLightbox('Public/Images/IMG_7309.jpeg')">
+                        <img src="Public/Images/IMG_7309.jpeg" alt="Diploma In Urdu Certification"
+                            class="certificate-img" loading="lazy">
+                    </div>
+                    <div class="certificate-details">
+                        <h3 class="certificate-title">Diploma In Urdu Certification</h3>
+                        <p class="certificate-authority">Issuing Authority</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="scroll-elem fade-in" style="margin-top: 0;">
+        <p>&copy; 2026 Muhammed Hisham P. All rights reserved.</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close Lightbox">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Full Screen Certificate">
+    </div>
+
+    <!-- GSAP for 3D Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js?v=1.2"></script>
+</body>
+
+</html>

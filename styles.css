@@ -64,7 +64,7 @@ body {
     left: 0;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 10000;
+    z-index: 99999 !important;
     pointer-events: none;
 }
 
@@ -77,7 +77,7 @@ body {
     left: 0;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 9999;
+    z-index: 99998 !important;
     pointer-events: none;
     transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -89,7 +89,7 @@ body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    a, button, .btn {
+    a, button, .btn, .certificate-frame, .lightbox-close, .back-home-btn {
         cursor: none !important;
     }
 }
@@ -822,4 +822,248 @@ footer {
     .hamburger-menu { display: flex; }
     .social-links { flex-direction: column; }
     .projects-grid { grid-template-columns: 1fr; }
+}
+
+/* --- CERTIFICATES CTA BUTTON (on index.html) --- */
+.certificates-cta {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 5% 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certificates-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.9rem 2.4rem;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    border-color: var(--glass-border);
+    transition: all 0.4s var(--organic-ease), transform 0.1s ease;
+}
+
+@media (hover: hover) {
+    .certificates-btn:hover {
+        border-color: var(--accent-2);
+        color: var(--accent-2);
+        box-shadow: 0 8px 30px rgba(168, 85, 247, 0.15);
+        transform: translateY(-3px);
+    }
+}
+
+.certificates-btn:active {
+    transform: scale(0.95);
+}
+
+.certificates-btn i {
+    font-size: 1.05rem;
+    color: var(--accent-2);
+}
+
+/* --- CERTIFICATES PAGE --- */
+.certificates-main {
+    min-height: 100vh;
+}
+
+.back-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+@media (hover: hover) {
+    .back-home-btn:hover {
+        transform: translateX(-5px);
+        color: var(--accent-1);
+    }
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 3.5rem;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.certificate-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+
+/* Minimal Premium Frame Aesthetic */
+.certificate-frame {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 0.4s var(--organic-ease), box-shadow 0.4s var(--organic-ease), border-color 0.4s ease;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (hover: hover) {
+    .certificate-frame:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: var(--accent-1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="light"] .certificate-frame:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.certificate-frame:active {
+    transform: scale(0.98);
+}
+
+.certificate-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Left-aligned certificate details */
+.certificate-details {
+    text-align: left;
+    padding-left: 0.25rem;
+}
+
+.certificate-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-main);
+}
+
+.certificate-authority {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* --- LIGHTBOX --- */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 50000;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 4px;
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1.8rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    z-index: 50001;
+}
+
+@media (hover: hover) {
+    .lightbox-close:hover {
+        transform: scale(1.1);
+        color: var(--accent-3);
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.lightbox-close:active {
+    transform: scale(0.9);
+}
+
+/* Responsive certificates grid */
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .certificate-frame {
+        padding: 1.2rem;
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .lightbox-close {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.4rem;
+    }
 }

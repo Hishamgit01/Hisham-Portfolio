@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Add hover effect for interactive elements
-        const hoverElements = document.querySelectorAll('a, .btn, .social-btn, .project-card, .card, .service-card, .theme-toggle');
+        const hoverElements = document.querySelectorAll('a, .btn, .social-btn, .project-card, .card, .service-card, .theme-toggle, .certificate-frame, .lightbox-close, .certificates-btn, .back-home-btn');
         hoverElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursorOutline.classList.add('hover');
@@ -206,6 +206,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
+        // Certificates CTA animation
+        gsap.fromTo(".certificates-cta", 
+            { autoAlpha: 0, y: 30 },
+            {
+                scrollTrigger: {
+                    trigger: ".certificates-cta",
+                    start: "top 85%",
+                },
+                autoAlpha: 1,
+                y: 0,
+                duration: 1,
+                ease: "back.out(1.5)"
+            }
+        );
+        
         // Footer animation
         gsap.fromTo("footer", 
             { autoAlpha: 0, y: 30 },
@@ -222,3 +237,38 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     }
 });
+
+// --- LIGHTBOX LOGIC ---
+window.openLightbox = function(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    if(lightbox && lightboxImg) {
+        lightboxImg.src = imageSrc;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // prevent scroll
+    }
+}
+
+window.closeLightbox = function() {
+    const lightbox = document.getElementById('lightbox');
+    if(lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // restore scroll
+    }
+}
+
+// Close lightbox on clicking outside the image
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    if(lightbox && lightboxImg) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
+});
+
