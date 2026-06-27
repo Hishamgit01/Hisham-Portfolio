@@ -236,6 +236,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         );
     }
+
+    // --- CONDITIONAL MOBILE HERO INTRO ---
+    const heroBgVideo = document.getElementById('hero-bg-video');
+    const profileImgContainer = document.querySelector('.profile-img-container');
+    
+    if (heroBgVideo && profileImgContainer) {
+        if (window.innerWidth <= 768) {
+            // Mobile: Wait for the exact end of the first video loop
+            heroBgVideo.addEventListener('ended', function mobileVideoEnded() {
+                profileImgContainer.classList.add('show-profile');
+                heroBgVideo.loop = true;
+                heroBgVideo.play().catch(e => console.error("Error playing video:", e));
+                heroBgVideo.removeEventListener('ended', mobileVideoEnded);
+            });
+        } else {
+            // Desktop: Loop immediately
+            heroBgVideo.loop = true;
+            heroBgVideo.play().catch(e => console.error("Error playing video:", e));
+        }
+    }
 });
 
 // --- LIGHTBOX LOGIC ---

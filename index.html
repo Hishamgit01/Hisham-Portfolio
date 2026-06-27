@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammed Hisham P - Portfolio</title>
-    <meta name="description" content="Portfolio of Muhammed Hisham P - Passionate Tech Enthusiast, Self-taught Developer & Graphical Designer">
+    <meta name="description"
+        content="Portfolio of Muhammed Hisham P - Passionate Tech Enthusiast, Self-taught Developer & Graphical Designer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -12,6 +14,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
@@ -20,7 +23,7 @@
     <!-- Animated Full Background -->
     <div class="animated-bg dark-bg"></div>
     <div class="animated-bg light-bg"></div>
-    
+
     <nav class="navbar intro-elem intro-fade-down">
         <div class="nav-right">
             <ul class="nav-links">
@@ -49,24 +52,37 @@
     <!-- Mobile Drawer -->
     <div id="mobile-drawer" class="mobile-drawer">
         <ul class="mobile-nav-links">
-            <li><a href="#hero" class="mobile-link" style="--item-index: 1;"><span class="nav-num">01.</span> Home</a></li>
-            <li><a href="#skills" class="mobile-link" style="--item-index: 2;"><span class="nav-num">02.</span> Skills</a></li>
-            <li><a href="#projects" class="mobile-link" style="--item-index: 3;"><span class="nav-num">03.</span> Projects</a></li>
-            <li><a href="certificates.html" class="mobile-link" style="--item-index: 4;"><span class="nav-num">04.</span> Certificates</a></li>
-            <li><a href="#services" class="mobile-link" style="--item-index: 5;"><span class="nav-num">05.</span> Services</a></li>
-            <li><a href="#social" class="mobile-link" style="--item-index: 6;"><span class="nav-num">06.</span> Connect</a></li>
+            <li><a href="#hero" class="mobile-link" style="--item-index: 1;"><span class="nav-num">01.</span> Home</a>
+            </li>
+            <li><a href="#skills" class="mobile-link" style="--item-index: 2;"><span class="nav-num">02.</span>
+                    Skills</a></li>
+            <li><a href="#projects" class="mobile-link" style="--item-index: 3;"><span class="nav-num">03.</span>
+                    Projects</a></li>
+            <li><a href="certificates.html" class="mobile-link" style="--item-index: 4;"><span
+                        class="nav-num">04.</span> Certificates</a></li>
+            <li><a href="#services" class="mobile-link" style="--item-index: 5;"><span class="nav-num">05.</span>
+                    Services</a></li>
+            <li><a href="#social" class="mobile-link" style="--item-index: 6;"><span class="nav-num">06.</span>
+                    Connect</a></li>
         </ul>
     </div>
 
     <main>
         <!-- HERO SECTION -->
         <section id="hero" class="hero">
+            <!-- Background Video -->
+            <video id="hero-bg-video" class="hero-bg-video" autoplay muted playsinline>
+                <source src="Public/Video/hero-bg.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+
             <div class="hero-container">
                 <div class="hero-text">
                     <p class="greeting intro-elem intro-fade-up" style="--delay: 1">Hi, I am</p>
                     <h1 class="name gradient-text intro-elem intro-fade-up" style="--delay: 2">Muhammed Hisham P</h1>
                     <h2 class="role intro-elem intro-fade-up" style="--delay: 3">Tech Enthusiast & Creator</h2>
-                    <p class="tagline intro-elem intro-fade-up" style="--delay: 4">Blending code and creativity to build extraordinary digital experiences.</p>
+                    <p class="tagline intro-elem intro-fade-up" style="--delay: 4">Blending code and creativity to build
+                        extraordinary digital experiences.</p>
                     <div class="cta-group intro-elem intro-fade-up" style="--delay: 5">
                         <a href="#projects" class="btn btn-primary">View My Projects</a>
                         <a href="#social" class="btn btn-outline">Let's Connect</a>
@@ -74,7 +90,8 @@
                 </div>
                 <div class="hero-image intro-elem" style="--delay: 6">
                     <div class="profile-img-container">
-                        <img src="Public/Images/mypic.JPG" alt="Muhammed Hisham P" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Muhammed+Hisham&background=random&color=fff&size=500'">
+                        <img src="Public/Images/mypic.JPG" alt="Muhammed Hisham P" class="profile-img"
+                            onerror="this.src='https://ui-avatars.com/api/?name=Muhammed+Hisham&background=random&color=fff&size=500'">
                         <div class="img-glow"></div>
                     </div>
                 </div>
@@ -88,12 +105,14 @@
                 <div class="card glassmorphism scroll-elem scale-up">
                     <div class="card-icon"><i class="fa-brands fa-html5"></i></div>
                     <h3>Frontend Engineer</h3>
-                    <p>Crafting responsive and interactive user interfaces using modern web technologies like HTML, CSS, and JavaScript.</p>
+                    <p>Crafting responsive and interactive user interfaces using modern web technologies like HTML, CSS,
+                        and JavaScript.</p>
                 </div>
                 <div class="card glassmorphism scroll-elem scale-up">
                     <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
                     <h3>Brand & UI/UX Designer</h3>
-                    <p>Designing compelling visual identities, branding materials, and stunning graphics with a keen eye for aesthetics.</p>
+                    <p>Designing compelling visual identities, branding materials, and stunning graphics with a keen eye
+                        for aesthetics.</p>
                 </div>
                 <div class="card glassmorphism scroll-elem scale-up">
                     <div class="card-icon"><i class="fa-solid fa-code"></i></div>
@@ -111,33 +130,44 @@
                 <!-- Project 1: Eco Ride -->
                 <div class="project-card glassmorphism scroll-elem slide-up-heavy">
                     <div class="project-image">
-                        <div class="img-placeholder" style="background: linear-gradient(135deg, var(--accent-3), var(--accent-1));">
+                        <div class="img-placeholder"
+                            style="background: linear-gradient(135deg, var(--accent-3), var(--accent-1));">
                             <i class="fa-solid fa-car"></i>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>Eco Ride</h3>
-                        <p style="font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem;">A Smart Cab-Sharing Mobile Application</p>
-                        <p>An eco-friendly ride-sharing mobile application designed to optimize daily commutes, reduce carbon footprint, and share travel costs efficiently.</p>
-                        <p style="font-size: 0.85rem; margin-top: -0.5rem; margin-bottom: 1.5rem;"><strong>Tech Stack:</strong> Flutter, Dart, Firebase, Git.</p>
+                        <p style="font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem;">A Smart Cab-Sharing
+                            Mobile Application</p>
+                        <p>An eco-friendly ride-sharing mobile application designed to optimize daily commutes, reduce
+                            carbon footprint, and share travel costs efficiently.</p>
+                        <p style="font-size: 0.85rem; margin-top: -0.5rem; margin-bottom: 1.5rem;"><strong>Tech
+                                Stack:</strong> Flutter, Dart, Firebase, Git.</p>
                         <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                            <a href="https://github.com/Hishamgit01/cab-sharing.git" target="_blank" class="project-link">View Source Code <i class="fa-brands fa-github"></i></a>
-                            <a href="https://drive.google.com/file/d/1UgzDFZDKC091I5fzz6p_G5i7gXqH_l50/view?usp=sharing" target="_blank" class="project-link">Project Documentation <i class="fa-solid fa-file-pdf"></i></a>
-                            <a href="eco-ride-screenshots.html" target="_blank" class="project-link">View App Screenshots <i class="fa-solid fa-images"></i></a>
+                            <a href="https://github.com/Hishamgit01/cab-sharing.git" target="_blank"
+                                class="project-link">View Source Code <i class="fa-brands fa-github"></i></a>
+                            <a href="https://drive.google.com/file/d/1UgzDFZDKC091I5fzz6p_G5i7gXqH_l50/view?usp=sharing"
+                                target="_blank" class="project-link">Project Documentation <i
+                                    class="fa-solid fa-file-pdf"></i></a>
+                            <a href="eco-ride-screenshots.html" target="_blank" class="project-link">View App
+                                Screenshots <i class="fa-solid fa-images"></i></a>
                         </div>
                     </div>
                 </div>
                 <!-- Project 2 -->
                 <div class="project-card glassmorphism scroll-elem slide-up-heavy">
                     <div class="project-image">
-                        <div class="img-placeholder" style="background: linear-gradient(135deg, var(--accent-2), var(--accent-3));">
+                        <div class="img-placeholder"
+                            style="background: linear-gradient(135deg, var(--accent-2), var(--accent-3));">
                             <i class="fa-solid fa-layer-group"></i>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>Brand Identity Design</h3>
-                        <p>A comprehensive branding package including logo design, typography selection, and marketing materials.</p>
-                        <a href="brand-identity.html" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        <p>A comprehensive branding package including logo design, typography selection, and marketing
+                            materials.</p>
+                        <a href="brand-identity.html" target="_blank" class="project-link">View Project <i
+                                class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -145,7 +175,8 @@
 
         <!-- VIEW CERTIFICATES CTA -->
         <div class="certificates-cta scroll-elem fade-up">
-            <a href="certificates.html" class="btn btn-outline glassmorphism certificates-btn" style="border-radius: 50px;">
+            <a href="certificates.html" class="btn btn-outline glassmorphism certificates-btn"
+                style="border-radius: 50px;">
                 <i class="fa-solid fa-certificate"></i> View Certificates
             </a>
         </div>
@@ -162,7 +193,8 @@
                 <div class="service-card glassmorphism scroll-elem fade-in">
                     <div class="card-icon"><i class="fa-solid fa-pen-ruler"></i></div>
                     <h3>UI/UX Design</h3>
-                    <p>Designing intuitive user interfaces that provide exceptional user experiences across all devices.</p>
+                    <p>Designing intuitive user interfaces that provide exceptional user experiences across all devices.
+                    </p>
                 </div>
                 <div class="service-card glassmorphism scroll-elem fade-in">
                     <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
@@ -175,17 +207,21 @@
         <!-- SOCIAL CONNECT -->
         <section id="social" class="social section-container">
             <h2 class="section-title scroll-elem fade-up">Let's <span class="gradient-text">Connect</span></h2>
-            <p class="social-subtitle scroll-elem fade-up">Find me across the web. I'm always open to new opportunities and collaborations.</p>
+            <p class="social-subtitle scroll-elem fade-up">Find me across the web. I'm always open to new opportunities
+                and collaborations.</p>
             <div class="social-links stagger-children">
-                <a href="https://www.linkedin.com/in/muhammed-hisham-p-76457a300" target="_blank" class="social-btn linkedin glassmorphism scroll-elem scale-up">
+                <a href="https://www.linkedin.com/in/muhammed-hisham-p-76457a300" target="_blank"
+                    class="social-btn linkedin glassmorphism scroll-elem scale-up">
                     <i class="fa-brands fa-linkedin-in"></i>
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com/Hishamgit01" target="_blank" class="social-btn github glassmorphism scroll-elem scale-up">
+                <a href="https://github.com/Hishamgit01" target="_blank"
+                    class="social-btn github glassmorphism scroll-elem scale-up">
                     <i class="fa-brands fa-github"></i>
                     <span>GitHub</span>
                 </a>
-                <a href="https://www.instagram.com/hisham_tube/" target="_blank" class="social-btn instagram glassmorphism scroll-elem scale-up">
+                <a href="https://www.instagram.com/hisham_tube/" target="_blank"
+                    class="social-btn instagram glassmorphism scroll-elem scale-up">
                     <i class="fa-brands fa-instagram"></i>
                     <span>Instagram</span>
                 </a>
@@ -200,10 +236,11 @@
     <!-- GSAP for 3D Scroll Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <!-- VanillaTilt for 3D Card Hover Effects -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
     <script src="script.js?v=1.1"></script>
 </body>
+
 </html>
