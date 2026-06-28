@@ -918,35 +918,12 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .hero {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        height: 100vh;
-    }
-    
-    .hero-bg-video {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
+    .hero-bg-video,
+    .hero-overlay {
+        display: none;
     }
 
-    /* Mobile-only conditional intro animation for profile picture */
-    .profile-img-container {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
-    }
-    
-    .profile-img-container.show-profile {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
+
 }
 
 /* --- CERTIFICATES CTA BUTTON (on index.html) --- */
