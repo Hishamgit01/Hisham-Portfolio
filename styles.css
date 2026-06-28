@@ -98,7 +98,7 @@ body {
     .btn,
     .certificate-frame,
     .lightbox-close,
-    .back-home-btn {
+    .nav-back-btn {
         cursor: none !important;
     }
 }
@@ -975,21 +975,57 @@ footer {
     min-height: 100vh;
 }
 
-.back-home-btn {
+/* --- NAV BACK BUTTON --- */
+.nav-back-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+    padding: 0.4rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
     color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
 }
 
 @media (hover: hover) {
-    .back-home-btn:hover {
-        transform: translateX(-5px);
+    .nav-back-btn:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: var(--accent-1);
         color: var(--accent-1);
+        transform: translateX(-3px);
+    }
+}
+
+.nav-back-btn:active {
+    transform: scale(0.95);
+}
+
+[data-theme="light"] .nav-back-btn {
+    border-color: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.03);
+}
+
+@media (hover: hover) {
+    [data-theme="light"] .nav-back-btn:hover {
+        background: rgba(0, 0, 0, 0.08);
+        border-color: var(--accent-1);
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-back-btn {
+        padding: 0.4rem;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+    }
+    .nav-back-btn .back-text {
+        display: none;
     }
 }
 
