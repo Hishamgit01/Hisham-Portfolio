@@ -493,6 +493,7 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    transition: filter 0.5s ease;
 }
 
 /* Dark Overlay */
@@ -504,10 +505,15 @@ body {
     height: 100%;
     background: rgba(11, 15, 25, 0.6);
     z-index: 1;
+    transition: background 0.5s ease;
 }
 
 [data-theme="light"] .hero-overlay {
-    background: rgba(248, 250, 252, 0.7);
+    background: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .hero-bg-video {
+    filter: brightness(0.85) contrast(1.1);
 }
 
 .hero-container {
