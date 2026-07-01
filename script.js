@@ -316,3 +316,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// --- PAGE TRANSITION LOGIC ---
+window.handleBackClick = function(event) {
+    if (event) event.preventDefault();
+    const mainContent = document.querySelector('main');
+    if (mainContent) {
+        mainContent.classList.add('page-exit-active');
+    }
+    setTimeout(() => {
+        history.back();
+    }, 250);
+};
+
