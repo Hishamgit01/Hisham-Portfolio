@@ -98,7 +98,8 @@ body {
     .btn,
     .certificate-frame,
     .lightbox-close,
-    .nav-back-btn {
+    .nav-back-btn,
+    .phone-mockup {
         cursor: none !important;
     }
 }
@@ -1067,7 +1068,8 @@ footer {
     padding: 1.5rem;
     border-radius: 16px;
     cursor: pointer;
-    transition: transform 0.4s var(--organic-ease), box-shadow 0.4s var(--organic-ease), border-color 0.4s ease;
+    transition: all 0.5s ease;
+    will-change: transform, opacity;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -1075,13 +1077,13 @@ footer {
 
 @media (hover: hover) {
     .certificate-frame:hover {
-        transform: translateY(-8px) scale(1.02);
+        transform: translateY(-5px) scale(1.025);
         border-color: var(--accent-1);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(99, 102, 241, 0.4);
     }
 
     [data-theme="light"] .certificate-frame:hover {
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 40px rgba(99, 102, 241, 0.4);
     }
 }
 
@@ -1146,13 +1148,35 @@ footer {
     max-width: 90%;
     max-height: 90vh;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
-    transform: scale(0.9);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    border-radius: 4px;
+    transform: scale(0.85);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+    border-radius: 8px;
 }
 
-.lightbox.active .lightbox-content {
+.lightbox.active .lightbox-content.loaded {
     transform: scale(1);
+    opacity: 1;
+}
+
+/* Spinner Styles */
+.lightbox-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--accent-1);
+    animation: spin 1s ease-in-out infinite;
+    display: none;
+    z-index: 50001;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .lightbox-close {

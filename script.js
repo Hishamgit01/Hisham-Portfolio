@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Add hover effect for interactive elements
-        const hoverElements = document.querySelectorAll('a, .btn, .social-btn, .project-card, .card, .service-card, .theme-toggle, .certificate-frame, .lightbox-close, .certificates-btn, .back-home-btn');
+        const hoverElements = document.querySelectorAll('a, .btn, .social-btn, .project-card, .card, .service-card, .theme-toggle, .certificate-frame, .lightbox-close, .certificates-btn, .back-home-btn, .phone-mockup');
         hoverElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursorOutline.classList.add('hover');
@@ -95,6 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
             gyroscopeMaxAngleX: 45,
             gyroscopeMinAngleY: -45,
             gyroscopeMaxAngleY: 45,
+        });
+
+        // Dedicated 3D Parallax effect for phone mockups
+        VanillaTilt.init(document.querySelectorAll(".phone-mockup"), {
+            max: 8,
+            speed: 600,
+            glare: true,
+            "max-glare": 0.2,
+            scale: 1.01,
+            gyroscope: true,
         });
     }
 
@@ -183,12 +193,12 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         });
 
-        // Scroll Animations for grids with 3D pop effect
+        // Scroll Animations for grids with Slide Up + Fade In effect
         gsap.utils.toArray('.stagger-children').forEach(container => {
             const children = container.querySelectorAll('.scroll-elem, .card, .service-card, .project-card, .social-btn');
             if (children.length > 0) {
                 gsap.fromTo(children,
-                    { autoAlpha: 0, y: 100, rotationX: 45, scale: 0.9 },
+                    { autoAlpha: 0, y: 15 },
                     {
                         scrollTrigger: {
                             trigger: container,
@@ -196,11 +206,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         autoAlpha: 1,
                         y: 0,
-                        rotationX: 0,
-                        scale: 1,
                         duration: 0.8,
-                        stagger: 0.2,
-                        ease: "power3.out"
+                        stagger: 0.15,
+                        ease: "cubic-bezier(0.16, 1, 0.3, 1)"
                     }
                 );
             }
@@ -262,11 +270,27 @@ document.addEventListener('DOMContentLoaded', () => {
 window.openLightbox = function(imageSrc) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const spinner = document.getElementById('lightbox-spinner');
     
     if(lightbox && lightboxImg) {
-        lightboxImg.src = imageSrc;
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden'; // prevent scroll
+        
+        const targetToAnimate = lightboxImg.closest('.lightbox-content') || lightboxImg;
+        
+        targetToAnimate.classList.remove('loaded');
+        lightboxImg.src = ""; // Clear old image
+        if (spinner) spinner.style.display = 'block';
+        
+        const img = new Image();
+        img.onload = () => {
+            lightboxImg.src = imageSrc;
+            if (spinner) spinner.style.display = 'none';
+            requestAnimationFrame(() => {
+                targetToAnimate.classList.add('loaded');
+            });
+        };
+        img.src = imageSrc;
     }
 }
 
