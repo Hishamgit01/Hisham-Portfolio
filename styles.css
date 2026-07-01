@@ -1235,9 +1235,3 @@ footer {
         font-size: 1.4rem;
     }
 }
-
-/* --- PAGE TRANSITION --- */
-.page-exit-active {
-    opacity: 0 !important;
-    transition: opacity 0.25s ease-in-out !important;
-}
